@@ -4,6 +4,7 @@ module Int1 where
 -- use these functions where appropriate below.
 open import Nat
 
+
 data Int : Set where
   -- int a b represents (a - b).
   int : Nat → Nat → Int
@@ -14,21 +15,22 @@ isuc (int a b) = int (suc a) b
 
 -- given i, return i - 1.
 ipred : Int → Int
-ipred = ?
+ipred (int a b) = int b (suc a)
 
 -- given i, return -i.
 ineg : Int → Int
-ineg = ?
+ineg (int a b) = int b a
 
 -- given i & j, return i + j.
 iplus : Int → Int → Int
-iplus = ?
+iplus (int a b) (int c d) = int (a (c)) (b (d))
 
 -- given i & j, return i - j.
 iminus : Int → Int → Int
-iminus = ?
+iminus (int a b) (int c d) = {! int (a c) - (b d) !}
 
 -- given i & j, return i * j.
 itimes : Int → Int → Int
-itimes = ?
+itimes (int a b) (int c d) = {! int (a (times c)) (b (times d)) !}
 
+ 
